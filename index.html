@@ -1,96 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Havenwatch Foundation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Havenwatch Foundation — Online Child Protection</title>
+
+  <!-- Simple theme variables: dark/minimal (default) and cream/light swap -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
+    :root {
+      --bg: #0f1720;         /* dark navy */
+      --panel: #0b1220;      /* slightly darker panels */
+      --accent: #e6decf;     /* cream accent for headings/links */
+      --muted: #9aa4b2;      /* muted text */
+      --text: #f3f4f6;       /* primary text on dark */
+      --maxw: 1000px;
     }
-    header {
-      background: #1a73e8;
-      color: #fff;
-      padding: 20px 10px;
-      text-align: center;
+
+    /* Cream theme variables (applied with .cream on body) */
+    .cream {
+      --bg: #fbf7ef;         /* cream background */
+      --panel: #fffaf2;      /* pale panels */
+      --accent: #2b3b4a;     /* dark slate for headings */
+      --muted: #5a646c;
+      --text: #15202b;
     }
-    header img {
-      max-width: 120px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
-    }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-    h2 {
-      color: #1a73e8;
-      margin-top: 30px;
-    }
-    a.button {
-      display: inline-block;
-      background: #1a73e8;
-      color: white;
-      padding: 12px 20px;
-      margin: 20px 0;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      margin: 50px 0 20px;
-    }
-    ul {
-      padding-left: 20px;
+
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); color: var(--text); }
+    .wrap { max-width: var(--maxw); margin: 28px auto; padding: 20px; }
+    header { display: flex; gap: 18px; align-items: center; background: linear-gradient(180deg, rgba(0,0,0,0.05), transparent); padding: 18px; border-radius: 10px; }
+    .logo { width: 84px; height: 84px; flex: 0 0 84px; display:flex; align-items:center; justify-content:center; border-radius:10px; background:var(--panel); }
+    .logo img { max-width:76px; max-height:76px; display:block; }
+    .logo-fallback { font-weight:700; letter-spacing:0.4px; font-size:18px; color:var(--accent); text-align:center; padding:6px; }
+    header h1 { margin: 0; font-size:20px; color:var(--accent); }
+    header p { margin: 4px 0 0 0; color:var(--muted); font-size:13px; }
+
+    .controls { margin-left:auto; display:flex; gap:8px; }
+    .btn { background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--accent); padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:600; font-size:13px; }
+    .btn.secondary { border-style:dashed; color:var(--muted); font-weight:600; }
+
+    main { margin-top:18px; display:grid; gap:18px; }
+    .hero { background:var(--panel); padding:18px; border-radius:10px; }
+    .hero h2 { margin:0 0 8px 0; color:var(--accent); font-size:18px; }
+    .hero p { margin:0; color:var(--text); line-height:1.5; }
+
+    .columns { display:grid; grid-template-columns: 1fr; gap:16px; }
+    @media(min-width:900px){ .columns { grid-template-columns: 1fr 360px; } }
+
+    .card { background:var(--panel); padding:14px; border-radius:10px; color:var(--text); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+    .card h3 { margin:0 0 8px 0; color:var(--accent); font-size:15px; }
+    .card p { margin:0; color:var(--muted); font-size:14px; line-height:1.5; }
+
+    .dept-list { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+    .dept { padding:12px; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border:1px solid rgba(255,255,255,0.03); }
+    .dept strong { display:block; color:var(--accent); margin-bottom:6px; }
+    .small { font-size:13px; color:var(--muted); }
+
+    .apply { display:block; text-decoration:none; margin-top:12px; padding:12px 14px; background:var(--accent); color:var(--panel); border-radius:10px; font-weight:700; width:fit-content; }
+    .apply.small { padding:8px 10px; font-size:14px; }
+
+    footer { margin-top:18px; color:var(--muted); font-size:13px; text-align:center; padding:14px; }
+    .note { border-left:3px solid rgba(255,255,255,0.04); padding-left:10px; margin-top:8px; color:var(--muted); font-size:13px; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* subtle responsive reduce */
+    @media(max-width:520px){
+      header { flex-direction:column; align-items:flex-start; gap:10px; }
+      .controls { margin-left:0; width:100%; justify-content:space-between; }
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo" id="logoWrap">
+        <!-- primary logo; fallback handled via script -->
+        <img id="siteLogo" src="assets/logo1.webp" alt="Havenwatch logo" />
+        <div id="logoFallback" class="logo-fallback" style="display:none;">Havenwatch</div>
+      </div>
 
-<header>
-  <img src="assets/logo1.webp" alt="Havenwatch Logo">
-  <h1>Havenwatch Foundation for Child Protection</h1>
-  <p>Civilian-led, non-governmental organization focused on online child safety and prevention.</p>
-</header>
+      <div>
+        <h1>Havenwatch Foundation</h1>
+        <p>Volunteer-led, civilian NGO dedicated to online child protection through lawful, trauma-aware, and evidence-based practice.</p>
+      </div>
 
-<main>
-  <h2>Our Structure</h2>
-  <p>Havenwatch operates through specialized departments to ensure legal compliance, operational efficiency, and trauma-aware handling of online child protection cases.</p>
+      <div class="controls" aria-hidden="true">
+        <button class="btn" id="themeToggle">Toggle theme</button>
+        <a class="btn secondary" href="https://tally.so/r/BzxrQ1" target="_blank" rel="noopener">Apply to Volunteer</a>
+      </div>
+    </header>
 
-  <h2>Departments & Roles</h2>
-  <ul>
-    <li><strong>Intake & Triage:</strong> Receives reports, verifies evidence, summarizes cases, approves/rejects, and requests additional info when necessary. Roles: Intake Reviewer, Intake Lead.</li>
-    <li><strong>Digital Investigations & Analysis:</strong> Performs OSINT analysis on cases using open-source methods only. Roles: Digital Investigator, Analysis Specialist.</li>
-    <li><strong>Legal, Policy & External Relations:</strong> Ensures compliance and manages lawful reporting. Roles: Field Legal Reviewer, Policy & Standards Advisor, Cybertipping & External Relations Specialist.</li>
-    <li><strong>Operations & Case Management:</strong> Manages internal stability, case assignment, and volunteer access. Roles: Operations Coordinator, Case Management Officer, Internal Compliance Officer.</li>
-    <li><strong>Communications, Education & Outreach:</strong> Creates educational content, researches trends, and publishes awareness materials. Roles: Content Creator, Editor & Publisher, Researcher.</li>
-  </ul>
+    <main>
+      <section class="hero card">
+        <h2>Who we are</h2>
+        <p>
+          Havenwatch is a civilian-founded, non-law-enforcement organization that protects children online by identifying risks, compiling lawful evidence, and supporting safe reporting.
+          We operate with strict legal boundaries, trauma-informed handling, and layered operational security to make sure work is both effective and defensible. Our volunteers range from analysts and legal reviewers to content creators and operations staff — all trained to follow clear SOPs and escalation paths.
+        </p>
+      </section>
 
-  <h2>Volunteer Engagement</h2>
-  <p>Most roles require at least 2 hours per week. If a volunteer is inactive for 2 weeks, access is temporarily removed for operational security. Volunteers can return by requesting a task and checking in through Operations or Internal Compliance.</p>
+      <div class="columns">
+        <div>
+          <section class="card">
+            <h3>What we do</h3>
+            <p class="small">
+              We collect referrals and tipline reports, verify whether incoming evidence meets our internal guidelines, and prepare packages for lawful handover to platforms, NGOs, or law enforcement where appropriate. We also produce public-facing educational content that helps prevent online harm without sensationalizing cases.
+            </p>
 
-  <h2>Apply to Volunteer</h2>
-  <p>If you’re ready to join and support online child protection, submit your application here:</p>
-  <a class="button" href="https://tally.so/r/BzxrQ1" target="_blank">Apply Now</a>
+            <div class="dept-list">
+              <div class="dept">
+                <strong>Intake & Triage</strong>
+                <div class="small">Front-line intake: verify evidence, summarize reports, approve or reject cases, and request more info from reporters or partner forwarders (securely and under supervision). Roles: Intake Reviewer, Intake Lead.</div>
+              </div>
 
-  <h2>Contact</h2>
-  <p>For general inquiries, please email: <a href="mailto:contact@havenwatch.org">contact@havenwatch.org</a></p>
-</main>
+              <div class="dept">
+                <strong>Digital Investigations & Analysis</strong>
+                <div class="small">OSINT-only analysis to map digital footprints and context. No evidence validation or HUMINT unless explicitly authorized. Roles: Digital Investigator, Analysis Specialist.</div>
+              </div>
 
-<footer>
-  &copy; 2026 Havenwatch Foundation for Child Protection
-</footer>
+              <div class="dept">
+                <strong>Legal, Policy & External Relations</strong>
+                <div class="small">Legal screening, policy design, and packaging evidence for lawful submission. Roles: Field Legal Reviewer, Policy Advisor, Cybertipping & External Relations Specialist.</div>
+              </div>
 
+              <div class="dept">
+                <strong>Operations & Case Management</strong>
+                <div class="small">Assigns and prioritizes cases, manages access, enforces inactivity policies, and oversees continuity. Roles: Operations Coordinator, Case Management Officer, Internal Compliance Officer.</div>
+              </div>
+
+              <div class="dept">
+                <strong>Communications, Education & Outreach</strong>
+                <div class="small">Creates evidence-based public education and awareness materials. Roles: Content Creator, Editor & Publisher, Researcher.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" style="margin-top:12px;">
+            <h3>Volunteer engagement & activity</h3>
+            <p class="small">
+              Most operational roles require consistent activity. Typical expectations:
+            </p>
+            <ul class="small" style="margin-top:8px;">
+              <li>Minimum activity: 2–3 reports processed or 1–2 hours per week for most roles.</li>
+              <li>Security policy: accounts inactive for 2 weeks will be temporarily removed or restricted for operational security (OPSEC).</li>
+              <li>Reinstatement: volunteers may request reactivation by checking in and completing a supervised task assigned by Operations or Internal Compliance.</li>
+            </ul>
+
+            <div class="note">
+              <strong>Important:</strong> Some senior roles or legal advisory positions may not require weekly activity and can operate in advisory or reserve capacity. Senior roles are selectively assigned based on performance and trust.
+            </div>
+          </section>
+
+          <section class="card" style="margin-top:12px;">
+            <h3>Safety, privacy & legal boundaries</h3>
+            <p class="small">
+              Havenwatch does not act as law enforcement. We operate within national and international legal frameworks, maintain strict confidentiality, and limit access to sensitive material. All public content is reviewed by Legal to avoid sensationalism or exposure culture. Volunteers are trained to follow evidence-handling SOPs and report any concerns through internal compliance.
+            </p>
+          </section>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Ready to help?</h3>
+            <p class="small">If you want to volunteer, please apply. Our application is short and role-specific — it helps us match your skills to the right team.</p>
+            <a class="apply" href="https://tally.so/r/BzxrQ1" target="_blank" rel="noopener">Open volunteer application</a>
+
+            <h3 style="margin-top:14px;">Quick contacts</h3>
+            <p class="small">
+              General: <a href="mailto:contact@havenwatch.org">contact@havenwatch.org</a><br>
+              Security & Ops: <a href="mailto:ops@havenwatch.org">ops@havenwatch.org</a>
+            </p>
+
+            <h3 style="margin-top:14px;">Logo troubleshooting</h3>
+            <p class="small">
+              If the logo does not appear: upload your logo as <code>assets/logo1.webp</code> and ensure the file name and casing exactly match.
+              After upload, hard-refresh the site (Ctrl/Cmd + Shift + R). The page will show the text title if the image fails to load.
+            </p>
+          </div>
+
+          <div class="card" style="margin-top:12px;">
+            <h3>Where to paste this file</h3>
+            <p class="small">
+              Save this file as <code>index.html</code> in the root of your repository:
+            </p>
+            <pre class="small" style="background:transparent;color:var(--muted);padding:8px;border-radius:6px;border:1px dashed rgba(255,255,255,0.03);">
+havenwatch-foundation.github.io/
+├── index.html    ← place here
+└── assets/
+    └── logo1.webp
+            </pre>
+            <p class="small">Use "Add file → Create new file" and paste this code, or upload directly and commit to the <code>main</code> branch.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 Havenwatch Foundation for Child Protection</div>
+      <div class="small">Civilian-led nonprofit initiative. Not a law enforcement agency. We comply with lawful reporting channels and partner with platforms and NGOs as appropriate.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle
+    (function(){
+      const toggle = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const body = document.body;
+      // default is dark/minimal; user can toggle to cream
+      toggle.addEventListener('click', function(){
+        body.classList.toggle('cream');
+        toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to cream';
+      });
+
+      // Logo fallback handling
+      const img = document.getElementById('siteLogo');
+      const fallback = document.getElementById('logoFallback');
+      img.addEventListener('error', function(){
+        img.style.display = 'none';
+        fallback.style.display = 'block';
+      });
+      // If image loads, ensure fallback hidden
+      img.addEventListener('load', function(){
+        fallback.style.display = 'none';
+        img.style.display = 'block';
+      });
+      // Attempt quick visibility check in case browser cached a 404
+      setTimeout(() => {
+        if (!img.complete || img.naturalWidth === 0) {
+          img.style.display = 'none';
+          fallback.style.display = 'block';
+        }
+      }, 300);
+    })();
+  </script>
 </body>
 </html>
-
