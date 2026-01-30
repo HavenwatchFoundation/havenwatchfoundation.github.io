@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About — Havenwatch Foundation</title>
+<link rel="icon" href="assets/logo1.webp" />
+<style>
+/* keep styles consistent with index */
+:root{--bg:#0f1720;--panel:#0b1220;--accent:#e6decf;--muted:#9aa4b2;--text:#f3f4f6;--maxw:1000px;}
+.cream{--bg:#fbf7ef;--panel:#fffaf2;--accent:#2b3b4a;--muted:#5a646c;--text:#15202b;}
+*{box-sizing:border-box;}html,body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);} .wrap{max-width:var(--maxw);margin:28px auto;padding:20px;}
+header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:10px;background:linear-gradient(180deg,rgba(0,0,0,0.05),transparent);}
+.title h1{margin:0;color:var(--accent);font-size:20px;} .nav{display:flex;gap:8px;}
+.btn{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--accent);padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;font-size:13px;}
+.logo{width:84px;height:84px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--panel);} .logo img{max-width:76px;max-height:76px;}
+main{margin-top:18px;}
+.card{background:var(--panel);padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+h2{color:var(--accent);margin-top:0;}
+.section {margin-top:18px;}
+.note{font-size:13px;color:var(--muted);}
+pre.charter{white-space:pre-wrap;word-wrap:break-word;background:transparent;color:var(--muted);padding:8px;border-radius:6px;border:1px dashed rgba(255,255,255,0.03);}
+footer{text-align:center;margin-top:18px;font-size:13px;color:var(--muted);}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="title"><h1>Havenwatch Foundation</h1></div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="departments.html">Departments</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="btn" id="themeToggle">Switch to light</button>
+      <div class="logo"><img id="siteLogo" src="assets/logo1.webp" alt="Havenwatch logo" /><div id="logoFallback" class="logo-fallback" style="display:none;">Havenwatch</div></div>
+    </div>
+  </header>
+
+  <main>
+    <article class="card">
+      <h2>About — Organizational Charter (Draft)</h2>
+
+      <p class="note"><strong>Charter status:</strong> Draft Charter — Date: 27 December 2025 · Jurisdiction: Global, civilian-led</p>
+
+      <section class="section">
+        <h3>1. Identity & Purpose</h3>
+        <p class="note"><strong>1.1 Name</strong><br/>Havenwatch Foundation for Child Protection (HFCP) — “Havenwatch”.</p>
+
+        <p class="note"><strong>1.2 Nature of the Organization</strong><br/>Havenwatch is a civilian-led, non-governmental, non-profit initiative dedicated to child protection in online environments. Havenwatch is not a law enforcement agency, does not claim police authority, and does not conduct arrests, prosecutions, or coercive actions. We operate independently while cooperating with recognized platforms, NGOs, and lawful reporting channels.</p>
+
+        <p class="note"><strong>1.3 Mission Statement</strong><br/>Havenwatch’s mission is to:
+        <ul>
+          <li>Make reporting cases accessible across the internet.</li>
+          <li>Support lawful reporting and escalation pathways.</li>
+          <li>Promote ethical, evidence-based handling of reports.</li>
+          <li>Strengthen prevention and awareness through education and outreach.</li>
+          <li>Operate with professionalism, neutrality, and legal compliance.</li>
+        </ul>
+        </p>
+
+        <p class="note"><strong>1.4 Core Principles</strong><br/>We operate under: Child Safety First; Legal Compliance; Non-Vigilantism; Neutrality; Proportionality; Trauma Awareness; Operational Integrity.</p>
+      </section>
+
+      <section class="section">
+        <h3>2. Scope of Activities</h3>
+        <p class="note"><strong>2.1 What Havenwatch Does</strong><br/>Receiving and reviewing reports of suspected online child exploitation; evidence preservation and documentation; OSINT; legal screening; cyber-tipping and lawful handover; awareness and prevention-focused education.</p>
+
+        <p class="note"><strong>2.2 What Havenwatch Does NOT Do</strong><br/>We do not conduct arrests or enforcement, impersonate law enforcement, engage in exposure or doxxing, use entrapment, guarantee outcomes, provide long-term counseling, or act as a replacement for law enforcement.</p>
+      </section>
+
+      <section class="section">
+        <h3>3–11: Structure, Programs, Principles & Governance (summary)</h3>
+        <p class="note">Havenwatch is organized into departments responsible for intake, analysis, legal review, operations, and communications. Programs (like HIRP) are conditional and strictly controlled. Volunteers follow a clear participation model with minimum activity expectations, inactivity handling, and role categories. Evidence-based decision-making, legal review of cyber-tips, and resource-aware prioritization guide case handling. Financially, Havenwatch operates on a volunteer model with no guaranteed funding; any funds are to be used transparently for infrastructure, training, and aid/awareness initiatives.</p>
+
+        <p class="note">Neutrality and independence are central: we do not engage in political advocacy or vigilantism and maintain cooperation with lawful channels while preserving operational independence.</p>
+      </section>
+
+      <section class="section">
+        <h3>Important operational notes</h3>
+        <p class="note"><strong>Volunteer expectations</strong>: typical minimum contribution is 1–2 hours or one task per week. Accounts inactive for two weeks may be paused for security.</p>
+        <p class="note"><strong>Legal & safety</strong>: All public content is reviewed by Legal. All cyber-tips are packaged and screened prior to handover. Trauma-aware handling is mandatory for reporters and victims.</p>
+      </section>
+
+      <section class="section">
+        <h3>Contact & reporting</h3>
+        <p class="note">Contact: <a href="mailto:havenwatchfoundation@proton.me">havenwatchfoundation@proton.me</a></p>
+        <p class="note">If you suspect child exploitation online, please report promptly to local law enforcement or to trusted hotlines such as the NCMEC CyberTipline: <a href="https://report.cybertip.org" target="_blank" rel="noopener">report.cybertip.org</a></p>
+      </section>
+
+      <section class="section">
+        <h3>Charter text (reference)</h3>
+        <pre class="charter">
+Havenwatch Foundation for Child
+Protection
+Organizational Charter
+Status: Draft Charter
+Date: 27 December 2025
+Jurisdiction: Global, civilian-led
+Nature: Non-profit, non-governmental, non–law-enforcement organization
+
+[Full charter sections are summarized above; the site retains a copy of the working draft for operational leadership and may amend the charter per governance procedures.]
+        </pre>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div>© 2026 Havenwatch Foundation</div>
+    <div class="note">Civilian-led initiative. Not law enforcement.</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const body = document.body;
+  const toggle = document.getElementById('themeToggle');
+  const logo = document.getElementById('siteLogo');
+  const fallback = document.getElementById('logoFallback');
+
+  if (localStorage.getItem('havenwatch_theme') === 'cream') body.classList.add('cream');
+  function updateToggle(){ toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to light'; }
+  updateToggle();
+  toggle.addEventListener('click', () => { body.classList.toggle('cream'); localStorage.setItem('havenwatch_theme', body.classList.contains('cream') ? 'cream' : 'dark'); updateToggle(); });
+
+  if (logo) {
+    logo.onerror = () => { logo.style.display='none'; if (fallback) fallback.style.display='block'; };
+    setTimeout(()=>{ if (!logo.complete || logo.naturalWidth===0){ logo.style.display='none'; if (fallback) fallback.style.display='block'; } },200);
+  } else if (fallback) fallback.style.display='block';
+})();
+</script>
+</body>
+</html>
