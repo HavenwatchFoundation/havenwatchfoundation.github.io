@@ -106,7 +106,7 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
           <a class="apply" href="https://tally.so/r/BzxrQ1" target="_blank" rel="noopener">Open volunteer application</a>
 
           <h3 style="margin-top:14px;">Contact</h3>
-          <p class="small"><a href="/cdn-cgi/l/email-protection#6f070e190a01180e1b0c0709001a010b0e1b0600012f1f1d001b000141020a"><span class="__cf_email__" data-cfemail="98f0f9eefdf6eff9ecfbf0fef7edf6fcf9ecf1f7f6d8e8eaf7ecf7f6b6f5fd">[email&#160;protected]</span></a></p>
+          <p class="small"><a href="mailto:havenwatchfoundation@proton.me">havenwatchfoundation@proton.me</a></p>
         </div>
 
         <div class="card" style="margin-top:12px;">
@@ -124,49 +124,65 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.addEventListener('DOMContentLoaded', function() {
-  const body = document.body;
-  const toggle = document.getElementById('themeToggle');
-  const logo = document.getElementById('siteLogo');
-  const fallback = document.getElementById('logoFallback');
+<script>
+(function() {
+  'use strict';
+  
+  window.addEventListener('DOMContentLoaded', function() {
+    var body = document.body;
+    var toggle = document.getElementById('themeToggle');
+    var logo = document.getElementById('siteLogo');
+    var fallback = document.getElementById('logoFallback');
 
-  // Load saved theme preference
-  const stored = localStorage.getItem('havenwatch_theme');
-  if (stored === 'cream') {
-    body.classList.add('cream');
-  }
-  updateToggle();
-
-  // Theme toggle click handler
-  if (toggle) {
-    toggle.addEventListener('click', function() {
-      body.classList.toggle('cream');
-      const newTheme = body.classList.contains('cream') ? 'cream' : 'dark';
-      localStorage.setItem('havenwatch_theme', newTheme);
-      updateToggle();
-    });
-  }
-
-  function updateToggle() {
-    if (toggle) {
-      toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to light';
+    // Load saved theme preference
+    var stored = localStorage.getItem('havenwatch_theme');
+    if (stored === 'cream') {
+      body.classList.add('cream');
     }
-  }
+    updateToggle();
 
-  // Logo fallback handling for SVG
-  if (logo) {
-    logo.addEventListener('error', function() { 
-      logo.style.display = 'none'; 
-      if (fallback) fallback.style.display = 'block'; 
-    });
-    
-    logo.addEventListener('load', function() { 
-      if (logo.naturalWidth === 0) { 
+    // Theme toggle click handler
+    if (toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        body.classList.toggle('cream');
+        var newTheme = body.classList.contains('cream') ? 'cream' : 'dark';
+        localStorage.setItem('havenwatch_theme', newTheme);
+        updateToggle();
+      });
+    }
+
+    function updateToggle() {
+      if (toggle) {
+        toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to light';
+      }
+    }
+
+    // Logo fallback handling for SVG
+    if (logo) {
+      logo.addEventListener('error', function() { 
         logo.style.display = 'none'; 
         if (fallback) fallback.style.display = 'block'; 
-      } 
-    });
-    
-    setTimeout(function() { 
-      i
+      });
+      
+      logo.addEventListener('load', function() { 
+        if (logo.naturalWidth === 0) { 
+          logo.style.display = 'none'; 
+          if (fallback) fallback.style.display = 'block'; 
+        } 
+      });
+      
+      setTimeout(function() { 
+        if (!logo.complete || logo.naturalWidth === 0) { 
+          logo.style.display = 'none'; 
+          if (fallback) fallback.style.display = 'block'; 
+        } 
+      }, 200);
+    } else { 
+      if (fallback) fallback.style.display = 'block'; 
+    }
+  });
+})();
+</script>
+</body>
+</html>
