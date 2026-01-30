@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Departments — Havenwatch Foundation</title>
+<link rel="icon" href="assets/logo1.webp" />
+<style>
+:root{--bg:#0f1720;--panel:#0b1220;--accent:#e6decf;--muted:#9aa4b2;--text:#f3f4f6;--maxw:1000px;}
+.cream{--bg:#fbf7ef;--panel:#fffaf2;--accent:#2b3b4a;--muted:#5a646c;--text:#15202b;}
+*{box-sizing:border-box;}html,body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);} .wrap{max-width:var(--maxw);margin:28px auto;padding:20px;}
+header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:10px;background:linear-gradient(180deg,rgba(0,0,0,0.05),transparent);}
+.btn{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--accent);padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;font-size:13px;}
+main{margin-top:18px;}
+.card{background:var(--panel);padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);margin-bottom:14px;}
+h2{color:var(--accent);margin-top:0;}
+.role{margin-top:8px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);}
+.kv{font-size:13px;color:var(--muted);}
+footer{text-align:center;margin-top:18px;font-size:13px;color:var(--muted);}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 style="margin:0;color:var(--accent);font-size:20px;">Departments & Programs</h1>
+      <nav style="margin-top:8px;display:flex;gap:8px;">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="departments.html">Departments</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="btn" id="themeToggle">Switch to light</button>
+      <div style="width:84px;height:84px;border-radius:10px;background:var(--panel);display:flex;align-items:center;justify-content:center;">
+        <img id="siteLogo" src="assets/logo1.webp" alt="Havenwatch logo" style="max-width:76px;max-height:76px;" />
+        <div id="logoFallback" style="display:none;color:var(--accent);font-weight:700;">Havenwatch</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Overview</h2>
+      <p class="kv">Havenwatch is organized into departments that separate duties and maintain checks. Departments are expected to coordinate through SOPs and reporting lines; some roles may serve in reserve/advisory capacity.</p>
+    </section>
+
+    <section class="card">
+      <h2>4.1 Case Intake, Review & Triage Department</h2>
+      <p class="kv"><strong>Purpose</strong>: Acts as front-line intake and filtering.</p>
+      <p class="kv"><strong>Responsibilities</strong>:
+        <ul>
+          <li>Receive reports and tipline submissions.</li>
+          <li>Initial and secondary evidence screening for eligibility.</li>
+          <li>Compile structured case packets for operations or legal review.</li>
+          <li>Follow-up with reporters (securely) where needed.</li>
+          <li>Determine case outcome states (accept, request-more-info, reject, escalate).</li>
+        </ul>
+      </p>
+      <p class="kv"><strong>Key Roles</strong>: Intake Reviewer; Intake Lead (senior triage authority).</p>
+      <p class="kv"><em>Notes:</em> Communication skills are mandatory; evidence validation is performed here before cases progress.</p>
+    </section>
+
+    <section class="card">
+      <h2>4.2 Digital Investigations & Analysis Department</h2>
+      <p class="kv"><strong>Purpose</strong>: Conduct structured OSINT on verified, actionable cases.</p>
+      <p class="kv"><strong>Responsibilities</strong>:
+        <ul>
+          <li>OSINT investigations to map context and corroborating indicators.</li>
+          <li>Timeline reconstruction and artifact documentation.</li>
+          <li>Support Intake and Legal teams with analysis outputs.</li>
+        </ul>
+      </p>
+      <p class="kv"><strong>Key Roles</strong>: Digital Investigator; Analysis Specialist.</p>
+      <p class="kv"><strong>Limitations</strong>: No HUMINT unless explicitly authorized; no non-open-source methods; avoid invasive or speculative techniques.</p>
+    </section>
+
+    <section class="card">
+      <h2>4.3 Legal, Policy & External Relations Department</h2>
+      <p class="kv"><strong>Purpose</strong>: Ensure legal compliance and coordinate external handovers.</p>
+      <p class="kv"><strong>Responsibilities</strong>:
+        <ul>
+          <li>Legal screening for jurisdictional and evidentiary issues.</li>
+          <li>Approval and packaging of cyber-tips for handover.</li>
+          <li>Draft and maintain SOPs, policy documents, and standards.</li>
+          <li>Maintain relationships with law enforcement, NGOs, and platforms.</li>
+        </ul>
+      </p>
+      <p class="kv"><strong>Key Roles</strong>: Field Legal Reviewer; Senior Legal Reviewer; Policy & Standards Advisor; External Relations & Cybertipping Specialist.</p>
+      <p class="kv"><em>Notes:</em> Legal advisors may be advisory/reserve; not all roles require weekly activity.</p>
+    </section>
+
+    <section class="card">
+      <h2>4.4 Operations & Case Management Department</h2>
+      <p class="kv"><strong>Purpose</strong>: Maintain internal continuity, manage access and workloads.</p>
+      <p class="kv"><strong>Responsibilities</strong>:
+        <ul>
+          <li>Case assignment, reassignment, and progress tracking.</li>
+          <li>Monitor volunteer availability and workload limits.</li>
+          <li>Enforce inactivity and compliance policies.</li>
+          <li>Manage access to shared infrastructure and oversee internal complaints.</li>
+        </ul>
+      </p>
+      <p class="kv"><strong>Key Roles</strong>: Operations Coordinator; Case Management Officer; Internal Compliance Officer.</p>
+    </section>
+
+    <section class="card">
+      <h2>4.5 Communications, Education & Outreach Department</h2>
+      <p class="kv"><strong>Purpose</strong>: Produce prevention-focused public communication.</p>
+      <p class="kv"><strong>Responsibilities</strong>:
+        <ul>
+          <li>Create educational and awareness content based on evidence and best practice.</li>
+          <li>Research emerging trends and publish summaries (legal-reviewed).</li>
+          <li>Coordinate outreach and partnerships (future expansion).</li>
+        </ul>
+      </p>
+      <p class="kv"><strong>Key Roles</strong>: Content Editors & Publishers; Researchers; Outreach (future).</p>
+      <p class="kv"><strong>Limitations</strong>: All public content must be legally reviewed; no sensationalism or exposure culture.</p>
+    </section>
+
+    <section class="card">
+      <h2>5 Programs — HIRP (Human Interaction Risk Program)</h2>
+      <p class="kv"><strong>Status</strong>: Conditional / Restricted</p>
+      <p class="kv"><strong>Purpose</strong>: Allows limited HUMINT/directed interaction only under strict conditions and explicit approvals.</p>
+      <p class="kv"><strong>Activation Criteria</strong>:
+        <ul>
+          <li>Actionable case with identified person of interest (POI).</li>
+          <li>Clear evidence of exploitation or grooming.</li>
+          <li>Legal approval and narrowly defined objective.</li>
+        </ul>
+      </p>
+      <p class="kv"><strong>Restricted Practices</strong>: No entrapment; no fishing for evidence; no low-evidence interaction; escalation beyond scope is prohibited.</p>
+    </section>
+
+    <section class="card">
+      <h2>6–8 Roles, Volunteer Model & Case Handling Principles</h2>
+      <p class="kv"><strong>Roles & Participation</strong>: Case handlers are primary/assistant roles with Ops oversight. Legal, Ops, and Communications have role-specific restrictions to avoid conflicts.</p>
+      <p class="kv"><strong>Department membership</strong>: One primary department; one secondary allowed if capacity permits; cross-training encouraged.</p>
+      <p class="kv"><strong>Volunteer expectations</strong>: Minimum 1–2 hours or one task each week. Inactivity (2 weeks) may lead to temporary pause for security.</p>
+      <p class="kv"><strong>Case handling principles</strong>: Evidence-based decisions; no speculative escalations; clear outcome states; legal review for cyber-tips; resource-aware prioritization.</p>
+    </section>
+
+    <section class="card">
+      <h2>9–11 Funding, Neutrality & Governance</h2>
+      <p class="kv"><strong>Funding status</strong>: No guaranteed funding; volunteer-based; minimal infrastructure costs. Financial principles: transparency; no personal profit; funds used for infrastructure, awareness, training.</p>
+      <p class="kv"><strong>Neutrality & Independence</strong>: No political endorsements; no vigilantism; cooperate lawfully while preserving independence from LEAs.</p>
+      <p class="kv"><strong>Amendments & Governance</strong>: Charter amendments by leadership with committee review; policies and SOPs derive authority from the Charter; conflicts resolved in favor of child safety & legal compliance.</p>
+    </section>
+
+    <section class="card">
+      <h2>Quick contacts</h2>
+      <p class="kv">Primary contact: <a href="mailto:havenwatchfoundation@proton.me">havenwatchfoundation@proton.me</a></p>
+      <p class="kv">NCMEC CyberTipline: <a href="https://report.cybertip.org" target="_blank" rel="noopener">report.cybertip.org</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 Havenwatch Foundation</div>
+    <div class="kv">Civilian-led initiative. Not law enforcement.</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const body = document.body;
+  const toggle = document.getElementById('themeToggle');
+  if (localStorage.getItem('havenwatch_theme')==='cream') body.classList.add('cream');
+  function update(){ toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to light'; }
+  update();
+  toggle.addEventListener('click', ()=>{ body.classList.toggle('cream'); localStorage.setItem('havenwatch_theme', body.classList.contains('cream') ? 'cream' : 'dark'); update(); });
+
+  const logo = document.getElementById('siteLogo');
+  const fallback = document.getElementById('logoFallback');
+  if (logo) {
+    logo.onerror = ()=>{ logo.style.display='none'; if (fallback) fallback.style.display='block'; };
+    setTimeout(()=>{ if (!logo.complete || logo.naturalWidth===0){ logo.style.display='none'; if (fallback) fallback.style.display='block'; } },200);
+  } else if (fallback) fallback.style.display='block';
+})();
+</script>
+</body>
+</html>
