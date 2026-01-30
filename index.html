@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Havenwatch Foundation — Online Child Protection</title>
-<link rel="icon" href="assests/logo1.webp" />
+<link rel="icon" href="assests/havenwatchlogo.svg" type="image/svg+xml" />
 <style>
 :root{
   --bg:#0f1720; --panel:#0b1220; --accent:#e6decf; --muted:#9aa4b2; --text:#f3f4f6; --maxw:1000px;
@@ -22,7 +22,7 @@ header{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:s
 .btn:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.1);}
 .btn.secondary{border-style:dashed;color:var(--muted);}
 .logo{width:70px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--panel);flex-shrink:0;}
-.logo img{max-width:100%;max-height:100%;display:block;object-fit:contain;}
+.logo img{max-width:100%;max-height:100%;display:block;object-fit:contain;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;}
 .logo-fallback{display:none;font-weight:700;color:var(--accent);font-size:14px;}
 main{margin-top:18px;display:grid;gap:18px;}
 .card{background:var(--panel);padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
@@ -49,7 +49,7 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
   <header>
     <div class="brand">
       <div class="logo" id="logoWrap">
-        <img id="siteLogo" src="assests/logo1.webp" alt="Havenwatch logo" />
+        <img id="siteLogo" src="assests/havenwatchlogo.svg" alt="Havenwatch logo" />
         <div id="logoFallback" class="logo-fallback">Havenwatch</div>
       </div>
       <div class="title">
@@ -105,7 +105,7 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
           <a class="apply" href="https://tally.so/r/BzxrQ1" target="_blank" rel="noopener">Open volunteer application</a>
 
           <h3 style="margin-top:14px;">Contact</h3>
-          <p class="small"><a href="mailto:havenwatchfoundation@proton.me">havenwatchfoundation@proton.me</a></p>
+          <p class="small"><a href="/cdn-cgi/l/email-protection#8de5ecfbe8e3faecf9eee5ebe2f8e3e9ecf9e4e2e3cdfdffe2f9e2e3a3e0e8"><span class="__cf_email__" data-cfemail="c7afa6b1a2a9b0a6b3a4afa1a8b2a9a3a6b3aea8a987b7b5a8b3a8a9e9aaa2">[email&#160;protected]</span></a></p>
         </div>
 
         <div class="card" style="margin-top:12px;">
@@ -123,7 +123,7 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
   const body = document.body;
   const toggle = document.getElementById('themeToggle');
@@ -146,10 +146,4 @@ a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
 
   if (logo) {
     logo.addEventListener('error', () => { logo.style.display = 'none'; if (fallback) fallback.style.display = 'block'; });
-    logo.addEventListener('load', () => { if (logo.naturalWidth === 0) { logo.style.display = 'none'; if (fallback) fallback.style.display = 'block'; } });
-    setTimeout(() => { if (!logo.complete || logo.naturalWidth === 0) { logo.style.display='none'; if (fallback) fallback.style.display='block'; } }, 200);
-  } else { if (fallback) fallback.style.display = 'block'; }
-})();
-</script>
-</body>
-</html>
+    logo.addEventListener('load', () => { if (logo.naturalWidth === 0) { logo.style.display = 'none'; if (fallback) fallback.style.display =
