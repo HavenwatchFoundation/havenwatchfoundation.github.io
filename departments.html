@@ -1,227 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Departments — Havenwatch Foundation</title>
-  <link rel="icon" href="assets/logo1.webp" />
-  <style>
-    :root{
-      --bg:#0f1720; --panel:#0b1220; --accent:#e6decf; --muted:#9aa4b2; --text:#f3f4f6;
-      --maxw:1000px; --radius:10px; --gap:18px;
-    }
-    .cream{ --bg:#fbf7ef; --panel:#fffaf2; --accent:#2b3b4a; --muted:#5a646c; --text:#15202b; }
-
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    .wrap{max-width:var(--maxw);margin:32px auto;padding:20px}
-    header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:18px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(0,0,0,0.05),transparent)}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .title h1{margin:0;font-size:20px;color:var(--accent)}
-    .title p{margin:4px 0 0 0;color:var(--muted);font-size:13px}
-    nav.primary{display:flex;gap:8px;align-items:center}
-    .btn{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--accent);padding:8px 12px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-    .btn.secondary{border-style:dashed;color:var(--muted)}
-    .btn.active{outline:2px solid rgba(230,222,207,0.06);box-shadow:0 6px 16px rgba(0,0,0,0.12)}
-    .logo{width:84px;height:84px;border-radius:10px;background:var(--panel);display:flex;align-items:center;justify-content:center}
-    .logo img{max-width:76px;max-height:76px;display:block}
-    .logo-fallback{display:none;color:var(--accent);font-weight:700;font-size:14px;text-align:center;padding:6px}
-
-    main{margin-top:var(--gap);display:grid;gap:18px}
-    .hero{background:var(--panel);padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.12)}
-    .hero h2{margin:0 0 8px 0;color:var(--accent)}
-    .muted{color:var(--muted);font-size:14px;line-height:1.6}
-
-    .stack{display:grid;gap:12px}
-    .card{background:var(--panel);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.12)}
-    .card h3{margin:0 0 8px 0;color:var(--accent);font-size:16px}
-    .card p{margin:0;color:var(--muted);line-height:1.5;font-size:14px}
-    .section-list{margin-top:10px;padding-left:18px}
-    .section-list li{margin-bottom:8px}
-
-    .kv{color:var(--muted);font-size:14px}
-    .note{border-left:3px solid rgba(255,255,255,0.04);padding-left:10px;margin-top:12px;color:var(--muted);font-size:13px}
-
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px;padding:12px}
-    @media(max-width:760px){ header{flex-direction:column;align-items:flex-start} .logo{align-self:flex-end} }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Departments — Havenwatch Foundation</title>
+<link rel="icon" href="assests/havenwatchlogo.svg" type="image/svg+xml" />
+<style>
+:root{
+  --bg:#0f1720; --panel:#0b1220; --accent:#e6decf; --muted:#9aa4b2; --text:#f3f4f6; --maxw:1000px;
+}
+.cream{ --bg:#fbf7ef; --panel:#fffaf2; --accent:#2b3b4a; --muted:#5a646c; --text:#15202b; }
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);}
+.wrap{max-width:var(--maxw);margin:28px auto;padding:20px;}
+header{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding:20px;border-radius:10px;background:linear-gradient(180deg,rgba(0,0,0,0.05),transparent);}
+.brand{display:flex;gap:16px;align-items:center;min-width:0;}
+.title h1{margin:0;color:var(--accent);font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;}
+.title p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.4;}
+.nav{display:flex;gap:8px;align-items:center;margin-left:auto;}
+.btn{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--accent);padding:9px 14px;border-radius:8px;font-weight:600;cursor:pointer;text-decoration:none;font-size:13px;transition:all 0.2s;}
+.btn:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.1);}
+.btn.secondary{border-style:dashed;color:var(--muted);}
+.logo{width:70px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--panel);flex-shrink:0;}
+.logo img{max-width:100%;max-height:100%;display:block;object-fit:contain;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;}
+.logo-fallback{display:none;font-weight:700;color:var(--accent);font-size:14px;}
+main{margin-top:18px;display:grid;gap:18px;}
+.card{background:var(--panel);padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+.hero{background:var(--panel);padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+.hero h2{margin:0 0 8px 0;color:var(--accent);font-size:20px;}
+.muted{color:var(--muted);font-size:14px;line-height:1.6;}
+.card h3{margin:0 0 10px 0;color:var(--accent);font-size:18px;font-weight:700;}
+.card p{margin:0;color:var(--muted);line-height:1.5;font-size:14px;}
+.section-list{margin-top:10px;padding-left:18px;color:var(--muted);font-size:14px;}
+.section-list li{margin-bottom:8px;line-height:1.5;}
+footer{text-align:center;margin-top:24px;font-size:13px;color:var(--muted);}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+@media(max-width:760px){
+  header{flex-direction:column;align-items:stretch;}
+  .brand{flex-direction:row;justify-content:flex-start;}
+  .nav{margin-left:0;flex-wrap:wrap;justify-content:center;}
+  .logo{width:60px;height:60px;}
+  .title h1{font-size:18px;}
+  .title p{font-size:12px;}
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand" role="banner">
-        <div class="title">
-          <h1>Departments & Programs</h1>
-          <p>How Havenwatch is organized and how cases move through our processes.</p>
-        </div>
-
-        <nav class="primary" aria-label="Primary navigation">
-          <a class="btn" href="index.html">Home</a>
-          <a class="btn" href="about.html">About</a>
-          <a class="btn active" href="departments.html" aria-current="page">Departments</a>
-        </nav>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" id="logoWrap">
+        <img id="siteLogo" src="assests/havenwatchlogo.svg" alt="Havenwatch logo" />
+        <div id="logoFallback" class="logo-fallback">Havenwatch</div>
       </div>
-
-      <div style="display:flex;gap:10px;align-items:center">
-        <button id="themeToggle" class="btn" type="button" aria-pressed="false">Switch to light</button>
-        <div class="logo" aria-hidden="false">
-          <img id="siteLogo" src="assets/logo1.webp" alt="Havenwatch logo" />
-          <div id="logoFallback" class="logo-fallback">Havenwatch</div>
-        </div>
+      <div class="title">
+        <h1>Havenwatch Foundation</h1>
+        <p>Volunteer-led civilian initiative focused on online child protection.</p>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <section class="hero" aria-labelledby="intro">
-        <h2 id="intro">Organization & case flow — concise overview</h2>
-        <p class="muted">
-          Departments separate duties and maintain checks so that evidence, analysis, legal review, operations, and communications remain distinct
-          and auditable. Below are department descriptions, program rules, and a short explanation of how a case typically moves through Havenwatch.
-        </p>
-      </section>
+    <nav class="nav" aria-label="Primary">
+      <a class="btn" href="index.html">Home</a>
+      <a class="btn" href="about.html">About</a>
+      <a class="btn" href="departments.html">Departments</a>
+      <a class="btn" href="guides.html">Guides</a>
+      <a class="btn secondary" href="https://tally.so/r/BzxrQ1" target="_blank" rel="noopener">Apply</a>
+      <button class="btn" id="themeToggle" type="button">Switch to light</button>
+    </nav>
+  </header>
 
-      <div class="stack">
-        <article class="card" aria-labelledby="digital">
-          <h3 id="digital">Digital Investigations & Analysis</h3>
-          <p class="muted">
-            The Digital Investigations & Analysis department works only on cases that have passed intake review. Investigators perform open-source
-            analysis to clarify context: public profiles, platform activity, timelines, and connections. All methods are lawful and non-intrusive.
-          </p>
+  <main>
+    <section class="hero">
+      <h2>Organization & case flow — concise overview</h2>
+      <p class="muted">
+        Departments separate duties and maintain checks so that evidence, analysis, legal review, operations, and communications remain distinct and auditable. Below are department descriptions, program rules, and a short explanation of how a case typically moves through Havenwatch.
+      </p>
+    </section>
 
-          <p class="muted" style="margin-top:10px">
-            Investigators do not validate evidence or decide escalation. Their role is to analyze and document findings to support legal review
-            or operational decisions. Speculation, invasive techniques, and unverified linking are prohibited. If analysis reaches a dead end,
-            the case is documented and returned rather than forced forward.
-          </p>
-        </article>
+    <article class="card">
+      <h3>Digital Investigations & Analysis</h3>
+      <p class="muted">
+        The Digital Investigations & Analysis department works only on cases that have passed intake review. Investigators perform open-source analysis to clarify context: public profiles, platform activity, timelines, and connections. All methods are lawful and non-intrusive.
+      </p>
+      <p class="muted" style="margin-top:10px;">
+        Investigators do not validate evidence or decide escalation. Their role is to analyze and document findings to support legal review or operational decisions. Speculation, invasive techniques, and unverified linking are prohibited. If analysis reaches a dead end, the case is documented and returned rather than forced forward.
+      </p>
+    </article>
 
-        <article class="card" aria-labelledby="legal">
-          <h3 id="legal">Legal, Policy & External Relations</h3>
-          <p class="muted">
-            This department ensures Havenwatch actions remain compliant, consistent, and responsible. Legal reviewers assess whether a case
-            meets requirements for lawful reporting and approve any external cyber-tip or handover. No submission occurs without legal review.
-          </p>
+    <article class="card">
+      <h3>Legal, Policy & External Relations</h3>
+      <p class="muted">
+        This department ensures Havenwatch actions remain compliant, consistent, and responsible. Legal reviewers assess whether a case meets requirements for lawful reporting and approve any external cyber-tip or handover. No submission occurs without legal review.
+      </p>
+      <p class="muted" style="margin-top:10px;">
+        The department also maintains internal policies, SOPs, and relationships with platforms, NGOs, and reporting channels. Legal reviewers exercise oversight and decision-making based on documented facts; they do not perform investigative tasks themselves.
+      </p>
+    </article>
 
-          <p class="muted" style="margin-top:10px">
-            The department also maintains internal policies, SOPs, and relationships with platforms, NGOs, and reporting channels. Legal reviewers
-            exercise oversight and decision-making based on documented facts; they do not perform investigative tasks themselves.
-          </p>
-        </article>
+    <article class="card">
+      <h3>Operations & Case Management</h3>
+      <p class="muted">
+        Operations keeps Havenwatch functional, secure, and stable. Responsibilities include assigning case handlers, monitoring workload, managing access to systems, and ensuring cases progress without overloading volunteers.
+      </p>
+      <p class="muted" style="margin-top:10px;">
+        Operations handles inactivity management, access pauses, and internal reviews related to conduct or process concerns. Operations does not investigate or make legal decisions; it provides coordination, continuity, and internal safety to reduce organizational risk.
+      </p>
+    </article>
 
-        <article class="card" aria-labelledby="ops">
-          <h3 id="ops">Operations & Case Management</h3>
-          <p class="muted">
-            Operations keeps Havenwatch functional, secure, and stable. Responsibilities include assigning case handlers, monitoring workload,
-            managing access to systems, and ensuring cases progress without overloading volunteers.
-          </p>
+    <article class="card">
+      <h3>Communications, Education & Outreach</h3>
+      <p class="muted">
+        This department focuses on prevention, awareness, and education. It develops research-based public material intended to inform rather than sensationalize. All public content is reviewed for accuracy and legal compliance prior to release.
+      </p>
+      <p class="muted" style="margin-top:10px;">
+        Communications staff do not handle case investigations. The separation protects operational integrity and prevents conflicts between messaging and investigations.
+      </p>
+    </article>
 
-          <p class="muted" style="margin-top:10px">
-            Operations handles inactivity management, access pauses, and internal reviews related to conduct or process concerns. Operations does
-            not investigate or make legal decisions; it provides coordination, continuity, and internal safety to reduce organizational risk.
-          </p>
-        </article>
+    <article class="card">
+      <h3>Programs & Conditional Activities</h3>
+      <p class="muted">
+        In addition to core departments, Havenwatch may run limited programs under strict conditions. Some activities — for example, direct digital interaction tied to a case — are permitted only when a case is actionable, the person of interest is identified, and legal approval is granted.
+      </p>
+      <p class="muted" style="margin-top:10px;">
+        Programs are narrowly scoped, time-limited, and closely supervised. They are activated only when standard reporting or analysis is insufficient, and are paused or discontinued when criteria are not met.
+      </p>
+    </article>
 
-        <article class="card" aria-labelledby="comm">
-          <h3 id="comm">Communications, Education & Outreach</h3>
-          <p class="muted">
-            This department focuses on prevention, awareness, and education. It develops research-based public material intended to inform
-            rather than sensationalize. All public content is reviewed for accuracy and legal compliance prior to release.
-          </p>
+    <article class="card">
+      <h3>How a case moves through Havenwatch</h3>
+      <p class="muted">Typical flow:</p>
+      <ul class="section-list">
+        <li><strong>Intake:</strong> Reports are received and screened for evidence quality and relevance.</li>
+        <li><strong>Decision:</strong> Cases that do not meet standards are closed or recorded with a rationale.</li>
+        <li><strong>Analysis:</strong> Eligible cases are assigned for open-source analysis (Digital Investigations).</li>
+        <li><strong>Legal review:</strong> Findings are reviewed by Legal for suitability to escalate or hand over.</li>
+        <li><strong>Handover:</strong> Only after legal approval is a cyber-tip or structured report submitted to an appropriate entity.</li>
+        <li><strong>Outcome:</strong> At any stage a case may be paused, documented, closed, or escalated based on evidence and capacity.</li>
+      </ul>
+      <p class="muted" style="margin-top:10px;">
+        Not all cases move forward by design. Priority is given to accuracy, safety, and lawful handling over volume or speed.
+      </p>
+    </article>
 
-          <p class="muted" style="margin-top:10px">
-            Communications staff do not handle case investigations. The separation protects operational integrity and prevents conflicts between
-            messaging and investigations.
-          </p>
-        </article>
+    <article class="card">
+      <h3>Why this structure matters</h3>
+      <p class="muted">
+        Separating intake, analysis, legal review, operations, and communications prevents concentration of control and reduces common failures:
+      </p>
+      <ul class="section-list">
+        <li>Decisions are recorded, reviewed, and accountable.</li>
+        <li>Operational and legal checks limit risky, speculative, or invasive actions.</li>
+        <li>Volunteers operate within clear boundaries to protect victims, reporters, and the organization.</li>
+        <li>The structure supports a transition toward a formal non-profit model and reflects a commitment to evidence, care, and restraint.</li>
+      </ul>
+    </article>
 
-        <article class="card" aria-labelledby="programs">
-          <h3 id="programs">Programs & Conditional Activities</h3>
-          <p class="muted">
-            In addition to core departments, Havenwatch may run limited programs under strict conditions. Some activities — for example, direct
-            digital interaction tied to a case — are permitted only when a case is actionable, the person of interest is identified, and legal
-            approval is granted.
-          </p>
+    <section class="card">
+      <h3>Quick contact</h3>
+      <p class="muted">Primary contact: <a href="mailto:havenwatchfoundation@proton.me">havenwatchfoundation@proton.me</a></p>
+      <p class="muted" style="margin-top:10px;">If you believe a child is in immediate danger, contact local emergency services. For suspected child sexual exploitation online, consider reporting to trusted hotlines (for example the NCMEC CyberTipline): <a href="https://report.cybertip.org" target="_blank" rel="noopener">report.cybertip.org</a></p>
+    </section>
+  </main>
 
-          <p class="muted" style="margin-top:10px">
-            Programs are narrowly scoped, time-limited, and closely supervised. They are activated only when standard reporting or analysis is
-            insufficient, and are paused or discontinued when criteria are not met.
-          </p>
-        </article>
+  <footer>
+    <div>© 2026 Havenwatch Foundation</div>
+    <div class="muted">Civilian-led initiative. Not a law enforcement agency.</div>
+  </footer>
+</div>
 
-        <article class="card" aria-labelledby="flow">
-          <h3 id="flow">How a case moves through Havenwatch</h3>
-          <p class="muted">
-            Typical flow:
-          </p>
-          <ul class="section-list muted">
-            <li><strong>Intake:</strong> Reports are received and screened for evidence quality and relevance.</li>
-            <li><strong>Decision:</strong> Cases that do not meet standards are closed or recorded with a rationale.</li>
-            <li><strong>Analysis:</strong> Eligible cases are assigned for open-source analysis (Digital Investigations).</li>
-            <li><strong>Legal review:</strong> Findings are reviewed by Legal for suitability to escalate or hand over.</li>
-            <li><strong>Handover:</strong> Only after legal approval is a cyber-tip or structured report submitted to an appropriate entity.</li>
-            <li><strong>Outcome:</strong> At any stage a case may be paused, documented, closed, or escalated based on evidence and capacity.</li>
-          </ul>
+<script>
+(function() {
+  'use strict';
+  
+  window.addEventListener('DOMContentLoaded', function() {
+    var body = document.body;
+    var toggle = document.getElementById('themeToggle');
+    var logo = document.getElementById('siteLogo');
+    var fallback = document.getElementById('logoFallback');
 
-          <p class="muted" style="margin-top:8px">
-            Not all cases move forward by design. Priority is given to accuracy, safety, and lawful handling over volume or speed.
-          </p>
-        </article>
+    // Load saved theme preference
+    var stored = localStorage.getItem('havenwatch_theme');
+    if (stored === 'cream') {
+      body.classList.add('cream');
+    }
+    updateToggle();
 
-        <article class="card" aria-labelledby="why">
-          <h3 id="why">Why this structure matters</h3>
-          <p class="muted">
-            Separating intake, analysis, legal review, operations, and communications prevents concentration of control and reduces common failures:
-          </p>
-          <ul class="section-list muted">
-            <li>Decisions are recorded, reviewed, and accountable.</li>
-            <li>Operational and legal checks limit risky, speculative, or invasive actions.</li>
-            <li>Volunteers operate within clear boundaries to protect victims, reporters, and the organization.</li>
-            <li>The structure supports a transition toward a formal non-profit model and reflects a commitment to evidence, care, and restraint.</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- quick contacts -->
-      <section class="card" style="margin-top:8px">
-        <h3>Quick contact</h3>
-        <p class="muted">Primary contact: <a href="mailto:havenwatchfoundation@proton.me">havenwatchfoundation@proton.me</a></p>
-        <p class="muted" style="margin-top:8px">If you believe a child is in immediate danger, contact local emergency services. For suspected child sexual exploitation online, consider reporting to trusted hotlines (for example the NCMEC CyberTipline): <a href="https://report.cybertip.org" target="_blank" rel="noopener">report.cybertip.org</a></p>
-      </section>
-    </main>
-
-    <footer>
-      <div>© 2026 Havenwatch Foundation — Volunteer initiative</div>
-    </footer>
-  </div>
-
-  <script>
-    (function () {
-      const body = document.body;
-      const toggle = document.getElementById('themeToggle');
-      const logo = document.getElementById('siteLogo');
-      const fallback = document.getElementById('logoFallback');
-
-      if (localStorage.getItem('havenwatch_theme') === 'cream') body.classList.add('cream');
-      function updateToggle(){ toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to light'; toggle.setAttribute('aria-pressed', String(body.classList.contains('cream'))); }
-      updateToggle();
-
-      toggle.addEventListener('click', () => {
+    // Theme toggle click handler
+    if (toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
         body.classList.toggle('cream');
-        localStorage.setItem('havenwatch_theme', body.classList.contains('cream') ? 'cream' : 'dark');
+        var newTheme = body.classList.contains('cream') ? 'cream' : 'dark';
+        localStorage.setItem('havenwatch_theme', newTheme);
         updateToggle();
       });
+    }
 
-      if (logo) {
-        logo.addEventListener('error', () => { logo.style.display='none'; if (fallback) fallback.style.display='block'; });
-        logo.addEventListener('load', () => { if (logo.naturalWidth === 0) { logo.style.display='none'; if (fallback) fallback.style.display='block'; } else if (fallback) fallback.style.display='none'; });
-        setTimeout(() => { if (!logo.complete || logo.naturalWidth === 0) { logo.style.display='none'; if (fallback) fallback.style.display='block'; } }, 250);
-      } else if (fallback) {
-        fallback.style.display='block';
+    function updateToggle() {
+      if (toggle) {
+        toggle.textContent = body.classList.contains('cream') ? 'Switch to dark' : 'Switch to light';
       }
-    })();
-  </script>
+    }
+
+    // Logo fallback handling for SVG
+    if (logo) {
+      logo.addEventListener('error', function() { 
+        logo.style.display = 'none'; 
+        if (fallback) fallback.style.display = 'block'; 
+      });
+      
+      logo.addEventListener('load', function() { 
+        if (logo.naturalWidth === 0) { 
+          logo.style.display = 'none'; 
+          if (fallback) fallback.style.display = 'block'; 
+        } 
+      });
+      
+      setTimeout(function() { 
+        if (!logo.complete || logo.naturalWidth === 0) { 
+          logo.style.display = 'none'; 
+          if (fallback) fallback.style.display = 'block'; 
+        } 
+      }, 200);
+    } else { 
+      if (fallback) fallback.style.display = 'block'; 
+    }
+  });
+})();
+</script>
 </body>
 </html>
